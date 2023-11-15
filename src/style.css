@@ -1,0 +1,210 @@
+:root{
+    --bg_1  : #101e2a;
+    --bg_2  : #15222e;
+    --text_1: #c2e1eb;
+    --text_2: #b1bdd1;
+    --console_text: #98c379;
+    --history_text: #e5c07b;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: ubuntu, sans-serif;
+    background-color: #1d1e22;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-size: 14px;
+    line-height: 1.2;
+    overflow-y: scroll;
+    /* padding-bottom: 20%; */
+}
+
+/* -------------ESTILOS APLICABLES */
+
+.title-2{
+    color: var(--text_2);
+    font-size: .9rem;
+}
+
+/* -------------ESTILOS DE PÁGINA EN GENERAL */
+
+#page{
+    /* width: 100vw; */
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "hd hd" 
+    "sb sb"
+    "main main";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 40% 45% ;
+    background-color: var(--bg_1);
+    /* overflow-y: scroll; */
+    
+}
+
+.page-header{
+    grid-area: hd;
+    background-color: var(--bg_1);
+}
+
+.page-aside{
+    grid-area: sb;
+    background-color: var(--bg_1);
+}
+.page-main{
+    grid-area: main;
+    background-color: var(--bg_1);
+}
+.page-footer{
+    background-color: var(--bg_1);
+    grid-area: ft;
+}
+
+
+
+/* ------------- HEADER */
+
+.page-header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 40px;
+    border: .5px solid lightblue;
+    border-left: 0;
+    border-right: 0;
+}
+.page-header > h1{
+    color: var(--text_1);
+    font-size: 1.3rem;
+}
+.header-list .list-item{
+    text-decoration: none;
+    text-align: center;
+}
+
+.header-button{
+    fill: var(--text_1);
+    background-color: #101e2a;
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(48, 54, 61);
+    border-radius: 20%;
+}
+
+/* -------------ASIDE */
+
+.page-aside{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: .8rem;
+    font-weight: lighter;
+    padding: 10px 5px;
+    gap: 5px;
+    line-height: 1.5;
+}
+
+.aside-section{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.aside-section header{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+.section{
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background-color: var(--bg_2);
+    border-radius: 20px;
+    margin: 0 10px;
+    line-height: 1.6;
+    /* 
+    align-items: start;
+    justify-content: start; */
+}
+
+.section__history{
+    color: var(--history_text);
+}
+
+
+
+/* -------------MAIN */
+.page-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+}
+/* ventana de escritorio  */
+.main-content{
+    height: 100%;
+}
+
+.section-img{
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------------EL LUGAR A MODIFICAR */
+/* console  header + div*/
+.main-section{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 20% 80%;
+    gap: 10px;
+    padding: 0px 20px;
+    padding-bottom: 100px;
+    background-color: var(--bg_1);
+}
+.main-section header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101e2a;
+}
+/*div de console -> ul ->lis  */
+.main-console{
+    width: 100%;
+    height: 100px;
+    overflow-y: scroll;
+    background-color: #101e2a;
+    opacity: .8;
+    border: #98c379 solid .1px;
+    color: silver;
+}
+/* ul */
+.console-list{
+    background-color: var(--bg_2);
+}
+
+li input{
+    background-color: #101e2a;
+    border: none;
+    color: silver;
+    opacity: .8;
+    max-width: 100vw;
+    
+}
+li{
+    list-style: none;
+}
+li::before{
+    content: "~$";
+}
